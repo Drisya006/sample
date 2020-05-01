@@ -5,8 +5,15 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{
   path: '',
-  component: HomeComponent
-  },
+  loadChildren: () => import('./login/login.module').then(s => s.LoginModule)
+}, {
+  path: 'home',
+  component: HomeComponent,
+  children: [{
+    path: 'department',
+    loadChildren: () => import('./home/department/department.module').then(s => s.DepartmentModule)
+  }]
+},
 {
   path: 'student',
   loadChildren: () => import('./student/student.module').then(s => s.StudentModule)

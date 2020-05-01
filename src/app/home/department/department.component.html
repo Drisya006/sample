@@ -1,1 +1,25 @@
-department works
+<div class="container">
+    <h3>
+        Department Details
+    </h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <th>
+                Department ID
+            </th>
+            <th>
+                Department Name
+            </th>
+            <tr *ngFor="let item of dept">
+                <td>
+                    {{item.id}}
+                </td>
+                <td>
+                    {{item.name}}
+                </td>
+            </tr>
+        </thead>
+
+    </table>
+    <button (click)="addDepartment()">Add Department</button>
+</div>

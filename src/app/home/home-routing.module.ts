@@ -4,12 +4,8 @@ import { HomeComponent } from './home.component';
 
 
 const routes: Routes = [{
-  path: '',
-  component : HomeComponent,
-  children: [{
-  path: 'department',
-  loadChildren: () => import('../home/department/department.module').then(s => s.DepartmentModule)
- }]
+  path: 'home',
+  component : HomeComponent
 }
 ];
 
