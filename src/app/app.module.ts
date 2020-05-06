@@ -13,13 +13,24 @@ import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
+import {
+  trigger, 
+  state, 
+  style, 
+  animate, 
+  transition, 
+  // ... 
+  } from '@angular/animations'; 
+import { DepartmentComponent } from './home/department/department.component';
+import { EditDepartmentComponent } from './home/department/edit-department/edit-department.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AdddepartmentComponent,
+    StudentComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +41,11 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
+
+    
 
 
   ],
@@ -38,7 +53,11 @@ import { HttpClientModule } from '@angular/common/http';
     AdddepartmentComponent
   ],
   exports:[
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule
+  
+
   ],
   providers: [],
   bootstrap: [AppComponent]

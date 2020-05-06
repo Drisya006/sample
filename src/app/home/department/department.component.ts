@@ -3,16 +3,19 @@ import { Department } from 'src/app/models/Department';
 import { AdddepartmentComponent } from 'src/app/adddepartment/adddepartment.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ApiServiceService } from 'src/app/services/api-service.service';
+import { trigger, state, animate, transition, style } from '@angular/animations';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
-  styleUrls: ['./department.component.css']
+  styleUrls: ['./department.component.css'],
+  
 })
 
 export class DepartmentComponent implements OnInit {
   dept: Department[];
 
-  constructor(private dialog: MatDialog,private apiService:ApiServiceService) {
+  constructor(private dialog: MatDialog,private apiService:ApiServiceService,private router:Router) {
     this.dept = [{ id: 1, name: 'ggh' }, { id: 2, name: 'bhghj' }];
   }
 
@@ -39,6 +42,8 @@ export class DepartmentComponent implements OnInit {
       data => console.log(" Dialog output: ", data)
     );
   }
-
+  editDepartment(){
+    this.router.navigate(['home/department/edit']);
+  }
 
 }

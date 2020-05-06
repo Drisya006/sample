@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SampleProject';
+  nextState='animated';
+  animateSquare(state) {
+    this.nextState = state;
+  }
 }

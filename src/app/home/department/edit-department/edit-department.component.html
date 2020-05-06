@@ -1,0 +1,28 @@
+<div class="container">
+    <form [formGroup]="editForm" (ngSubmit)="save()">
+        <div class="formGroup">
+            <label>
+                Department Id
+
+            </label>
+            <input type="number" formControlName="departmentId" class="form-control"    >
+            <div class="error" *ngIf="editForm.controls['departmentId'].hasError('required') &&
+            editForm.controls['departmentId'].touched">
+Required
+            </div>
+            <label>
+                Department Name
+
+            </label>
+            <input type="text" formControlName="departmentName" class="form-control">
+            <br>
+            <button type="submit" class="btn btn-primary">
+            Update
+
+
+
+            
+            </button>
+        </div>
+    </form>
+</div>

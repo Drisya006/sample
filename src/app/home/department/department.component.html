@@ -10,6 +10,8 @@
             <th>
                 Department Name
             </th>
+            <th>
+                Action </th>
             <tr *ngFor="let item of dept">
                 <td>
                     {{item.id}}
@@ -17,6 +19,10 @@
                 <td>
                     {{item.name}}
                 </td>
+                <td>
+                    <button type="text" class="btn btn-primary sm" (click)="editDepartment()">
+                        Edit
+                    </button> </td>
             </tr>
         </thead>
 

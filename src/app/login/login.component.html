@@ -8,23 +8,31 @@
             </h1>
         </div>
         <div class="row">
+            <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                <div class="form-group">
 
-            <div class="col-sm-12 userName">
-                <label>
-                    User Name
-                </label>
-                <input type="text">
-            </div>
-            <div class="col-sm-12 loginPassword">
-                <label>
-                    Password
-                </label>
+                    <div class="col-sm-12 userName">
+                        <label>
+                            User Name
+                        </label>
+                        <input type="text" class="form-control" formControlName="username">
+                    </div>
+                    <div class="col-sm-12 ">
+                        <label>
+                            Password
+                        </label>
 
-                <input type="password">
-            </div>
+                        <input type="password" class="form-control" formControlName="password">
+                    </div>
+                    <div class="error" *ngIf="loginForm.controls['password'].touched">
+                        password required
+                    </div>
+                </div>
 
-            <button type="submit" class="btn-btn-primary loginBtn" (click)="submit()" >
-                Login
-            </button>
+                <button type="submit" class="btn-btn-primary loginBtn">
+                    Login
+                </button>
+            </form>
+
         </div>
     </div>

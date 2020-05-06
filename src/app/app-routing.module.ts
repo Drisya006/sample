@@ -1,6 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { EditDepartmentComponent } from './home/department/edit-department/edit-department.component';
 
 
 const routes: Routes = [{
@@ -11,8 +12,10 @@ const routes: Routes = [{
   component: HomeComponent,
   children: [{
     path: 'department',
-    loadChildren: () => import('./home/department/department.module').then(s => s.DepartmentModule)
+    loadChildren: () => import('./home/department/department.module').then(s => s.DepartmentModule),
+
   }]
+
 },
 {
   path: 'student',
