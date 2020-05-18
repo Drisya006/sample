@@ -3,7 +3,9 @@
         Department Details
     </h3>
     <table class="table">
-        <thead class="thead-dark">
+        <thead class="thead-dark"><th>
+Category
+        </th>
             <th>
                 Department ID
             </th>
@@ -12,17 +14,25 @@
             </th>
             <th>
                 Action </th>
-            <tr *ngFor="let item of dept">
+            <tr *ngFor="let item of dept" (click)="goTodepartmentDetailPage(item)">
+                <!-- <a [routerLink]="['detail',item.id]" routerLinkActive="router-link-active"> -->
+          <td >
+                
+              <a [title]="item.category"></a> 
+          </td>
                 <td>
                     {{item.id}}
                 </td>
                 <td>
                     {{item.name}}
                 </td>
+
                 <td>
                     <button type="text" class="btn btn-primary sm" (click)="editDepartment()">
                         Edit
                     </button> </td>
+                <!-- </a> -->
+
             </tr>
         </thead>
 

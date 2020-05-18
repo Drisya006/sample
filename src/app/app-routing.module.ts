@@ -2,6 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EditDepartmentComponent } from './home/department/edit-department/edit-department.component';
+import { LoginGuard } from './login.guard';
 
 
 const routes: Routes = [{
@@ -13,7 +14,7 @@ const routes: Routes = [{
   children: [{
     path: 'department',
     loadChildren: () => import('./home/department/department.module').then(s => s.DepartmentModule),
-
+     canActivate :[LoginGuard]
   }]
 
 },

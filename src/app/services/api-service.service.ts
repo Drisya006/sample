@@ -13,7 +13,13 @@ export interface Post {
 export class ApiServiceService {
   apiUrl: string = 'https://jsonplaceholder.typicode.com/posts';
   constructor( private http:HttpClient   ) { }
+  login(user){
+    localStorage.setItem('currentUser', JSON.stringify(user));
 
+  }
+//   public get currentUserValue(): User {
+//     return this.currentUserSubject.value;
+// }
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.apiUrl);
   }

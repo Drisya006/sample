@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { StudentComponent } from '../student/student.component';
 import { EditDepartmentComponent } from './department/edit-department/edit-department.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { EditDepartmentComponent } from './department/edit-department/edit-depar
 ],
   imports: [
   CommonModule,
-    HomeRoutingModule 
+    HomeRoutingModule ,
+    ReactiveFormsModule
 
   ]
 })

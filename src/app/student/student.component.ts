@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 @Component({
   selector: 'app-student',
@@ -27,6 +27,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   ]
 })
 export class StudentComponent implements OnInit {
+  parentitem="parent";
+
 
   constructor() { }
 

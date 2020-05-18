@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -13,10 +13,16 @@ export class EditDepartmentComponent implements OnInit {
   ngOnInit() {
     this.editForm = this.formbuilder.group({
        departmentId: ['',Validators.required],
-       departmentName: ['', Validators.required]
+       departmentName: ['', Validators.required],
+       email: ['', Validators.required]
+
     });
   }
   save() {
     console.log(" value ", this.editForm.value)
   }
+  onNotify() {
+    window.alert('You will be notified when the product goes on sale');
+  }
+  
 }

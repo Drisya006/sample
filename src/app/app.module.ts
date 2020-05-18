@@ -23,39 +23,37 @@ import {
   } from '@angular/animations'; 
 import { DepartmentComponent } from './home/department/department.component';
 import { EditDepartmentComponent } from './home/department/edit-department/edit-department.component';
+import { StudentModule } from './student/student.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AdddepartmentComponent,
-    StudentComponent,
+    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule,
-    MatFormFieldModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
 
     
 
 
   ],
-  entryComponents: [
-    AdddepartmentComponent
-  ],
+  // entryComponents: [
+  //    AdddepartmentComponent
+  // ],
   exports:[
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   
 
   ],

@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-adddepartment',
@@ -8,6 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./adddepartment.component.css']
 })
 export class AdddepartmentComponent implements OnInit {
+  @Output() notify = new EventEmitter();
   form: FormGroup;
   departmentId: number;
   departmentName:String;
@@ -26,6 +28,7 @@ export class AdddepartmentComponent implements OnInit {
       departmentName: [this.departmentName, []]
     });
   }
+  
   save() {
     console.log("fdffd",this.form.value);
     this.dialogRef.close(this.form.value);
