@@ -1,0 +1,15 @@
+<p>sample works!</p>
+<app-product (notifyParent)="getNotification($event)"></app-product>
+<!-- <app-sample [child]="parentitem"></app-sample> -->
+<input (keyup)="onKey($event)">
+  <p>{{values}}</p>
+  <input #box
+  (keyup.enter)="update(box.value)" >
+  <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+      <option *ngFor="let pow of powers" >{{pow}}</option>
+    </select>
+    <!-- {{model.name}} -->
+  </div>
+  <!-- <label [attr.for]="question.name">{{question.label}}</label> -->

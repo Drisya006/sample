@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EditDepartmentComponent } from './home/department/edit-department/edit-department.component';
 import { LoginGuard } from './login.guard';
+import { SampleComponent } from './sample/sample.component';
+import { ProductComponent } from './product/product.component';
 
 
 const routes: Routes = [{
@@ -21,6 +23,14 @@ const routes: Routes = [{
 {
   path: 'student',
   loadChildren: () => import('./student/student.module').then(s => s.StudentModule)
+},
+{
+  path: 'product',
+  component:ProductComponent
+},
+{
+  path: 'sample',
+  component:SampleComponent
 }];
 
 @NgModule({

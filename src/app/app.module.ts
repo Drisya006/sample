@@ -24,11 +24,15 @@ import {
 import { DepartmentComponent } from './home/department/department.component';
 import { EditDepartmentComponent } from './home/department/edit-department/edit-department.component';
 import { StudentModule } from './student/student.module';
+import { ProductComponent } from './product/product.component';
+import { SampleComponent } from './sample/sample.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ProductComponent,
+    SampleComponent,
     
 
   ],

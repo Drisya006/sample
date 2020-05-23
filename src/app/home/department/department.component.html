@@ -2,6 +2,10 @@
     <h3>
         Department Details
     </h3>
+
+    <a [routerLink]="['/product']" routerLinkActive="router-link-active">go to product</a>
+    <a [routerLink]="['/sample']">go to sample</a>
+
     <table class="table">
         <thead class="thead-dark"><th>
 Category
@@ -19,12 +23,13 @@ Category
           <td >
                 
               <a [title]="item.category"></a> 
+              
           </td>
                 <td>
                     {{item.id}}
                 </td>
                 <td>
-                    {{item.name}}
+                    {{item.name | uppercase}}
                 </td>
 
                 <td>
