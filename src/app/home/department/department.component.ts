@@ -4,7 +4,7 @@ import { AdddepartmentComponent } from 'src/app/adddepartment/adddepartment.comp
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 import { trigger, state, animate, transition, style } from '@angular/animations';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
@@ -28,6 +28,9 @@ export class DepartmentComponent implements OnInit {
      this.dept = [{ id: 1, name: 'ggh',category: 'CS' }, { id: 2, name: 'bhghj',category: 'CS' }];
      this.products = [{ id:100,name:'Redmi' }];
      this.getProducts();
+     this.route.paramMap.subscribe((params:ParamMap)=>{
+     let id=parseInt(params.get('id'));
+     });
   }
   getMethod(){
     this.apiService.getPosts().subscribe(element=>{

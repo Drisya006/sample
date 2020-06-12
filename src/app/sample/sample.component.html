@@ -1,5 +1,10 @@
 <p>sample works!</p>
-<app-product (notifyParent)="getNotification($event)"></app-product>
+<button (click)="onclick()">click</button>
+
+<button (click)="greetings=welcome">click here</button>
+{{greetings}}
+
+<!-- <app-product (notifyParent)="getNotification($event)"></app-product> -->
 <!-- <app-sample [child]="parentitem"></app-sample> -->
 <input (keyup)="onKey($event)">
   <p>{{values}}</p>
@@ -13,3 +18,16 @@
     <!-- {{model.name}} -->
   </div>
   <!-- <label [attr.for]="question.name">{{question.label}}</label> -->
+  <input #myinputvalue type="text">
+  <button (click)="inputMessage(myinputvalue.value)">Log</button>
+  <h2 *ngIf="expression; else elseblock">
+
+  </h2>
+  <ng-template #elseblock>
+    <h2>else  works</h2>
+  </ng-template>
+
+  <div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">color is red</div>
+    <div *ngSwitchCase="'green'">color is green</div>
+  </div>

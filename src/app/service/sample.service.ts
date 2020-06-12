@@ -6,13 +6,18 @@ import { ApiServiceService } from '../services/api-service.service';
 })
 export class SampleService {
   dataurl='service/hero ';
+  example;
+  errormsg="";
 
   constructor(private apiservice:ApiServiceService) { }
 
 deleteHero(id){
 
   const url = `${this.dataurl}/${id}`;
-  return this.apiservice.delete(url);
+  return this.apiservice.getData().subscribe(
+    data => this.example=data,
+    error=>this.errormsg=error
+  );
 
 }
 }

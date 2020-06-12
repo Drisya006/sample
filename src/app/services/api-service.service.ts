@@ -2,7 +2,13 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { example } from '../models/Department';
-import { catchError } from 'rxjs/operators';
+
+import { catchError } from "rxjs/operators";
+
+
+// import  'rxjs/add/obserables/catch';
+// import  'rxjs/add/obserables/catchError';
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
@@ -35,11 +41,14 @@ export class ApiServiceService {
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.apiUrl);
   }
-  getData(){
+  getData():Observable<example>{
     // this.http.get('/ffd',{
     //   responseType: 'text'
     // })
-    return this.http.get<example>(this.dataurl);
+    return this.http.get<example>(this.dataurl).pipe(
+      catchError(this.handleError)
+      );
+
   }
   getConfigResponse():Observable<HttpResponse<example>> {
     console.log("enter2")

@@ -21,13 +21,16 @@ value="";
 powers=['1','rfj','gj'];
 model=new Sample(1,'vdg','vdf','vfdd');
 headers: string[];
+public greetings = "";
+public color="green";
+public expression=false;
 constructor(private apiservice:ApiServiceService,private sampleservice:SampleService){
 
 }
  
   ngOnInit() {
     this.showConfigResponse();
-    this.deleteHero();
+    // this.deleteHero();
     const nums=of(1,2,3);
     const squareValues = map((val:number)=>
     val=val*val);
@@ -40,6 +43,13 @@ constructor(private apiservice:ApiServiceService,private sampleservice:SampleSer
       err => console.log('error:', err),
       () => console.log('Completed'),
     );
+  }
+  inputMessage(value){
+    console.log("value",value)
+
+  }
+  onclick(){
+    this.greetings="welcome";
   }
   getNotification(count){
     console.log(count)
